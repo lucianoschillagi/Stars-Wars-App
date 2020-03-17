@@ -10,7 +10,7 @@ import SwiftUI
 
 struct FilmRow: View {
     
-    @State private var showingWelcome = false
+    @State private var producedBy = false
     
     var title: String
     var director: String
@@ -22,11 +22,11 @@ struct FilmRow: View {
             Text(title).fontWeight(.black)
             Text(director).fontWeight(.thin)
             Text(releaseDate).fontWeight(.regular)
-            Toggle(isOn: $showingWelcome.animation()) {
+            Toggle(isOn: $producedBy.animation()) {
                     Text("Produced by?")
                 }
             
-            if showingWelcome {
+            if producedBy {
                 Text(producer).fontWeight(.ultraLight)
             }
         }
